@@ -2,7 +2,7 @@ require('dotenv').config();
 require('./config/database'); // connects to db
 const express = require('express');
 const path = require('path'); // node module
-const logger = require('morgan');
+// const logger = require('morgan');
 
 const app = express();
 // development port: 3001
@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3001;
 
 //* Config
 // Logger middleware
-app.use(logger('dev'));
+// app.use(logger('dev'));
 // JSON payload middleware (for data coming from frontend functions)
 app.use(express.json());
 
