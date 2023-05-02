@@ -23,18 +23,33 @@ Here's the process to create a new MERN-Stack project that starts with the infra
 ### Let's deploy our app!
 
  1. First let's install cors `npm i cors`
+
  2. now require cors in your server.js
+
  3. Mount the cors middleware `app.use(cors())`
+
  4. Make sure your are serving the static build folder in server.js:
 
- `app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
-  app.use(express.static(path.join(__dirname, 'build')));`
+ <code>
+ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+  app.use(express.static(path.join(__dirname, 'build')));
+</code>
   
   and the route:
 
-  `app.get('/*', (req, res) => {
+<code>
+  app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))
-})`
+})</code>
 
- 5. 
- 6. 
+ 5. Check your node version with `node --version`
+ In the package.json file lets add your node version:
+
+<code>
+ "engines": {
+    "node": "18.7.0"
+  },
+</code>
+
+ 6. Let's also add a heroku script in package.json:
+ `"heroku-postbuild": "npm install && npm run build && node server.js"`
