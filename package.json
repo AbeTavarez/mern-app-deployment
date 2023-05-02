@@ -25,10 +25,10 @@
   },
   "scripts": {
     "start": "node server.js",
-    "build": "npm build",
+    "build": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-prebuild": "npm install && npm run build",
+    "heroku-prebuild": "npm install",
     "heroku-postbuild": "npm start"
   },
   "eslintConfig": {
