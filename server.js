@@ -4,6 +4,7 @@ const express = require('express');
 const path = require('path'); // node module
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const cors = require('cors')
 
 const app = express();
 // development port: 3001
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 3001;
 
 
 //* Config
+app.use(cors())
 // Logger middleware
 app.use(logger('dev'));
 // JSON payload middleware (for data coming from frontend functions)
