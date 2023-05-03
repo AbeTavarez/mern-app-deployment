@@ -51,5 +51,16 @@ Here's the process to create a new MERN-Stack project that starts with the infra
   },
 </code>
 
- 6. Let's also add a heroku script in package.json:
- `"heroku-postbuild": "npm install && npm run build && node server.js"`
+ 6. Update your script in package.json:
+ <code>
+ "scripts": {
+    "start": "node server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "heroku-prebuild": "npm install"
+  },</code>
+
+  7. Add your environment variables for your app in Heroku
+
+  8. Click on deploy!
